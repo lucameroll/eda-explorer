@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq;
-using LNE.IO;
 
-namespace Empatica2Ledalab
+namespace EmpaticaToLedalab
 {
 	class Program
 	{
@@ -11,11 +10,21 @@ namespace Empatica2Ledalab
 		static void Main(string[] args)
 		{
 			// load files
-			var edaCSV = LoadCSVFile("EDA file path:");
-			var tagCSV = LoadCSVFile("Tag file path:");
+			CSV edaCSV = null;
+			while (edaCSV == null)
+			{
+				edaCSV = LoadCSVFile("EDA file path:");
+			}
 
-			if (edaCSV == null || tagCSV == null)
-				return;
+			DebugConsole.WriteSuccess("EDA file loaded.");
+
+			CSV tagCSV = null;
+			while (tagCSV == null)
+			{
+				tagCSV = LoadCSVFile("Tag file path:");
+			}
+
+			DebugConsole.WriteSuccess("Tag file loaded.");
 
 			// load necessary data
 			var success = true;
@@ -68,9 +77,15 @@ namespace Empatica2Ledalab
 			ledalabCSV.AppendColumn(outEdas.Cast<object>().ToArray());
 			ledalabCSV.AppendColumn(outTags.Cast<object>().ToArray());
 
-			Console.WriteLine("Output file path:");
-			var outputPath = Console.ReadLine();
-			ledalabCSV.SaveAs(outputPath);
+			success = false;
+			while (success == false)
+			{
+				Console.WriteLine("Output file path:");
+				var outputPath = Console.ReadLine();
+				success = ledalabCSV.SaveAs(outputPath);
+			}
+
+			DebugConsole.WriteSuccess("Ouput file saved.");
 		}
 
 		private static CSV LoadCSVFile(string prompt)

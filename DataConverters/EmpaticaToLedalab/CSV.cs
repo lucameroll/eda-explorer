@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace LNE.IO
+namespace EmpaticaToLedalab
 {
 	/// <summary>
 	/// Represents a CSV file
@@ -55,7 +55,7 @@ namespace LNE.IO
 			}
 			else
 			{
-				Console.Error.WriteLine($"The path ({path}) does not exist.");
+				DebugConsole.WriteError($"The path ({path}) does not exist.");
 				return false;
 			}
 		}
@@ -112,7 +112,7 @@ namespace LNE.IO
 
 			if (y >= height)
 			{
-				Console.Error.WriteLine($"No row at position ({y})");
+				DebugConsole.WriteError($"No row at position ({y})");
 				return false;
 			}
 
@@ -136,7 +136,7 @@ namespace LNE.IO
 
 			if (x >= width)
 			{
-				Console.Error.WriteLine($"No column at position ({x})");
+				DebugConsole.WriteError($"No column at position ({x})");
 				return false;
 			}
 
@@ -162,7 +162,7 @@ namespace LNE.IO
 			var success = cells.TryGetValue((x, y), out string cell);
 			if (success == false)
 			{
-				Console.Error.WriteLine($"No cell at position ({x}, {y}).");
+				DebugConsole.WriteError($"No cell at position ({x}, {y}).");
 				return false;
 			}
 
@@ -197,14 +197,24 @@ namespace LNE.IO
 			}
 			else
 			{
-				Console.Error.WriteLine($"Cell ({x}, {y}) could not be parsed to a {typeof(T)}.");
+				DebugConsole.WriteWarning($"Cell ({x}, {y}) could not be parsed to a {typeof(T)}.");
 				return false;
 			}
 		}
 
-		public void SaveAs(string path)
+		public bool SaveAs(string path)
 		{
-			File.WriteAllText(path, AsString);
+			var directory = Path.GetDirectoryName(path);
+			if (Directory.Exists(directory))
+			{
+				File.WriteAllText(path, AsString);
+				return true;
+			}
+			else
+			{
+				DebugConsole.WriteError($"Directory ({directory}) does not exist.");
+				return false;
+			}
 		}
 	}
 }
