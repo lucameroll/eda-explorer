@@ -1,0 +1,13 @@
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\bin\Debug\netcoreapp3.1\EmpaticaToLedalab.exe
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\bin\Debug\netcoreapp3.1\EmpaticaToLedalab.deps.json
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\bin\Debug\netcoreapp3.1\EmpaticaToLedalab.runtimeconfig.json
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\bin\Debug\netcoreapp3.1\EmpaticaToLedalab.runtimeconfig.dev.json
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\bin\Debug\netcoreapp3.1\EmpaticaToLedalab.dll
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\bin\Debug\netcoreapp3.1\EmpaticaToLedalab.pdb
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\obj\Debug\netcoreapp3.1\EmpaticaToLedalab.csprojAssemblyReference.cache
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\obj\Debug\netcoreapp3.1\EmpaticaToLedalab.AssemblyInfoInputs.cache
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\obj\Debug\netcoreapp3.1\EmpaticaToLedalab.AssemblyInfo.cs
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\obj\Debug\netcoreapp3.1\EmpaticaToLedalab.csproj.CoreCompileInputs.cache
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\obj\Debug\netcoreapp3.1\EmpaticaToLedalab.dll
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\obj\Debug\netcoreapp3.1\EmpaticaToLedalab.pdb
+C:\Users\thorn\source\repos\DataConverters\EmpaticaToLedalab\obj\Debug\netcoreapp3.1\EmpaticaToLedalab.genruntimeconfig.cache
